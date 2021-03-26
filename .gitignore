@@ -34,18 +34,25 @@
 # Qt
 *.pro
 *.pro.user
-/build*
+build*/
 
 # C#
 *.suo
 *.user
 *.sln.docstates
+*.sln
+*.csproj
+*.config
 
 [Dd]ebug/
 [Rr]elease/
 x64/
 [Bb]in/
 [Oo]bj/
+
+packages/
+.vs/
+Properties/
 
 [Tt]est[Rr]esult*/
 [Bb]uild[Ll]og.*
@@ -75,3 +82,7 @@ x64/
 *.log
 *.svclog
 *.scc
+
+# Python
+.idea/
+__pycache__/
