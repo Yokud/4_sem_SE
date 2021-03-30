@@ -74,18 +74,19 @@ namespace Lab_03
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.White;
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(13, 13);
+            this.pictureBox1.Location = new System.Drawing.Point(15, 17);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(500, 500);
+            this.pictureBox1.Size = new System.Drawing.Size(600, 600);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(520, 13);
+            this.label1.Location = new System.Drawing.Point(633, 16);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(74, 15);
+            this.label1.Size = new System.Drawing.Size(93, 20);
             this.label1.TabIndex = 1;
             this.label1.Text = "Цвет линии:";
             // 
@@ -93,9 +94,10 @@ namespace Lab_03
             // 
             this.lineColor.BackColor = System.Drawing.Color.White;
             this.lineColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lineColor.Location = new System.Drawing.Point(597, 14);
+            this.lineColor.Location = new System.Drawing.Point(727, 18);
+            this.lineColor.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.lineColor.Name = "lineColor";
-            this.lineColor.Size = new System.Drawing.Size(32, 14);
+            this.lineColor.Size = new System.Drawing.Size(54, 18);
             this.lineColor.TabIndex = 2;
             this.lineColor.TabStop = false;
             this.lineColor.Click += new System.EventHandler(this.pictureBox2_Click);
@@ -103,9 +105,9 @@ namespace Lab_03
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(647, 13);
+            this.label2.Location = new System.Drawing.Point(641, 55);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 15);
+            this.label2.Size = new System.Drawing.Size(85, 20);
             this.label2.TabIndex = 3;
             this.label2.Text = "Цвет фона:";
             // 
@@ -113,9 +115,10 @@ namespace Lab_03
             // 
             this.bgColor.BackColor = System.Drawing.Color.White;
             this.bgColor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.bgColor.Location = new System.Drawing.Point(721, 14);
+            this.bgColor.Location = new System.Drawing.Point(727, 57);
+            this.bgColor.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.bgColor.Name = "bgColor";
-            this.bgColor.Size = new System.Drawing.Size(32, 14);
+            this.bgColor.Size = new System.Drawing.Size(54, 18);
             this.bgColor.TabIndex = 4;
             this.bgColor.TabStop = false;
             this.bgColor.Click += new System.EventHandler(this.pictureBox2_Click_1);
@@ -123,9 +126,9 @@ namespace Lab_03
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(520, 54);
+            this.label3.Location = new System.Drawing.Point(633, 93);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(109, 15);
+            this.label3.Size = new System.Drawing.Size(137, 20);
             this.label3.TabIndex = 5;
             this.label3.Text = "Выбор алгоритма:";
             // 
@@ -140,102 +143,108 @@ namespace Lab_03
             "Брезенхем(целые)",
             "Брезенхем(без ступенч.)",
             "Ву"});
-            this.choiceAlg.Location = new System.Drawing.Point(636, 51);
+            this.choiceAlg.Location = new System.Drawing.Point(776, 90);
+            this.choiceAlg.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.choiceAlg.Name = "choiceAlg";
-            this.choiceAlg.Size = new System.Drawing.Size(121, 23);
+            this.choiceAlg.Size = new System.Drawing.Size(163, 28);
             this.choiceAlg.TabIndex = 6;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(520, 108);
+            this.label4.Location = new System.Drawing.Point(633, 143);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(115, 15);
+            this.label4.Size = new System.Drawing.Size(145, 20);
             this.label4.TabIndex = 7;
             this.label4.Text = "Рисование спектра:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(532, 128);
+            this.label5.Location = new System.Drawing.Point(655, 168);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(45, 15);
+            this.label5.Size = new System.Drawing.Size(56, 20);
             this.label5.TabIndex = 8;
             this.label5.Text = "Длина:";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(541, 156);
+            this.label6.Location = new System.Drawing.Point(667, 207);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(36, 15);
+            this.label6.Size = new System.Drawing.Size(44, 20);
             this.label6.TabIndex = 9;
             this.label6.Text = "Угол:";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(645, 125);
+            this.label7.Location = new System.Drawing.Point(798, 167);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(44, 15);
+            this.label7.Size = new System.Drawing.Size(55, 20);
             this.label7.TabIndex = 10;
             this.label7.Text = "Центр:";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(670, 142);
+            this.label8.Location = new System.Drawing.Point(827, 189);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(15, 15);
+            this.label8.Size = new System.Drawing.Size(19, 20);
             this.label8.TabIndex = 11;
             this.label8.Text = "x:";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(669, 170);
+            this.label9.Location = new System.Drawing.Point(826, 227);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(16, 15);
+            this.label9.Size = new System.Drawing.Size(19, 20);
             this.label9.TabIndex = 12;
             this.label9.Text = "y:";
             // 
             // S_length
             // 
             this.S_length.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.S_length.Location = new System.Drawing.Point(576, 126);
+            this.S_length.Location = new System.Drawing.Point(709, 167);
+            this.S_length.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.S_length.Name = "S_length";
-            this.S_length.Size = new System.Drawing.Size(55, 22);
+            this.S_length.Size = new System.Drawing.Size(62, 25);
             this.S_length.TabIndex = 13;
             // 
             // S_angle
             // 
             this.S_angle.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.S_angle.Location = new System.Drawing.Point(576, 154);
+            this.S_angle.Location = new System.Drawing.Point(709, 206);
+            this.S_angle.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.S_angle.Name = "S_angle";
-            this.S_angle.Size = new System.Drawing.Size(55, 22);
+            this.S_angle.Size = new System.Drawing.Size(62, 25);
             this.S_angle.TabIndex = 14;
             // 
             // S_centre_x
             // 
             this.S_centre_x.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.S_centre_x.Location = new System.Drawing.Point(689, 140);
+            this.S_centre_x.Location = new System.Drawing.Point(848, 187);
+            this.S_centre_x.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.S_centre_x.Name = "S_centre_x";
-            this.S_centre_x.Size = new System.Drawing.Size(55, 22);
+            this.S_centre_x.Size = new System.Drawing.Size(62, 25);
             this.S_centre_x.TabIndex = 15;
             // 
             // S_centre_y
             // 
             this.S_centre_y.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.S_centre_y.Location = new System.Drawing.Point(689, 168);
+            this.S_centre_y.Location = new System.Drawing.Point(848, 224);
+            this.S_centre_y.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.S_centre_y.Name = "S_centre_y";
-            this.S_centre_y.Size = new System.Drawing.Size(55, 22);
+            this.S_centre_y.Size = new System.Drawing.Size(62, 25);
             this.S_centre_y.TabIndex = 16;
             // 
             // buttonSpectre
             // 
-            this.buttonSpectre.Location = new System.Drawing.Point(576, 196);
+            this.buttonSpectre.Location = new System.Drawing.Point(697, 260);
+            this.buttonSpectre.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonSpectre.Name = "buttonSpectre";
-            this.buttonSpectre.Size = new System.Drawing.Size(129, 23);
+            this.buttonSpectre.Size = new System.Drawing.Size(156, 31);
             this.buttonSpectre.TabIndex = 17;
             this.buttonSpectre.Text = "Нарисовать спектр";
             this.buttonSpectre.UseVisualStyleBackColor = true;
@@ -244,103 +253,108 @@ namespace Lab_03
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(520, 251);
+            this.label10.Location = new System.Drawing.Point(633, 334);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(114, 15);
+            this.label10.Size = new System.Drawing.Size(145, 20);
             this.label10.TabIndex = 18;
             this.label10.Text = "Рисование отрезка:";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(532, 270);
+            this.label11.Location = new System.Drawing.Point(647, 359);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(52, 15);
+            this.label11.Size = new System.Drawing.Size(64, 20);
             this.label11.TabIndex = 19;
             this.label11.Text = "Начало:";
             // 
             // textStartP_Y
             // 
             this.textStartP_Y.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textStartP_Y.Location = new System.Drawing.Point(574, 316);
+            this.textStartP_Y.Location = new System.Drawing.Point(695, 420);
+            this.textStartP_Y.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textStartP_Y.Name = "textStartP_Y";
-            this.textStartP_Y.Size = new System.Drawing.Size(55, 22);
+            this.textStartP_Y.Size = new System.Drawing.Size(62, 25);
             this.textStartP_Y.TabIndex = 23;
             // 
             // textStartP_X
             // 
             this.textStartP_X.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textStartP_X.Location = new System.Drawing.Point(574, 288);
+            this.textStartP_X.Location = new System.Drawing.Point(695, 383);
+            this.textStartP_X.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textStartP_X.Name = "textStartP_X";
-            this.textStartP_X.Size = new System.Drawing.Size(55, 22);
+            this.textStartP_X.Size = new System.Drawing.Size(62, 25);
             this.textStartP_X.TabIndex = 22;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(554, 318);
+            this.label12.Location = new System.Drawing.Point(672, 423);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(16, 15);
+            this.label12.Size = new System.Drawing.Size(19, 20);
             this.label12.TabIndex = 21;
             this.label12.Text = "y:";
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(555, 290);
+            this.label13.Location = new System.Drawing.Point(673, 386);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(15, 15);
+            this.label13.Size = new System.Drawing.Size(19, 20);
             this.label13.TabIndex = 20;
             this.label13.Text = "x:";
             // 
             // textEndP_Y
             // 
             this.textEndP_Y.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textEndP_Y.Location = new System.Drawing.Point(690, 316);
+            this.textEndP_Y.Location = new System.Drawing.Point(826, 417);
+            this.textEndP_Y.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textEndP_Y.Name = "textEndP_Y";
-            this.textEndP_Y.Size = new System.Drawing.Size(55, 22);
+            this.textEndP_Y.Size = new System.Drawing.Size(62, 25);
             this.textEndP_Y.TabIndex = 28;
             // 
             // textEndP_X
             // 
             this.textEndP_X.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textEndP_X.Location = new System.Drawing.Point(690, 288);
+            this.textEndP_X.Location = new System.Drawing.Point(826, 380);
+            this.textEndP_X.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textEndP_X.Name = "textEndP_X";
-            this.textEndP_X.Size = new System.Drawing.Size(55, 22);
+            this.textEndP_X.Size = new System.Drawing.Size(62, 25);
             this.textEndP_X.TabIndex = 27;
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(670, 318);
+            this.label14.Location = new System.Drawing.Point(803, 420);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(16, 15);
+            this.label14.Size = new System.Drawing.Size(19, 20);
             this.label14.TabIndex = 26;
             this.label14.Text = "y:";
             // 
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(670, 290);
+            this.label15.Location = new System.Drawing.Point(803, 383);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(15, 15);
+            this.label15.Size = new System.Drawing.Size(19, 20);
             this.label15.TabIndex = 25;
             this.label15.Text = "x:";
             // 
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(647, 272);
+            this.label16.Location = new System.Drawing.Point(776, 359);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(44, 15);
+            this.label16.Size = new System.Drawing.Size(56, 20);
             this.label16.TabIndex = 24;
             this.label16.Text = "Конец:";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(576, 346);
+            this.button1.Location = new System.Drawing.Point(697, 460);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(129, 23);
+            this.button1.Size = new System.Drawing.Size(168, 31);
             this.button1.TabIndex = 29;
             this.button1.Text = "Нарисовать отрезок";
             this.button1.UseVisualStyleBackColor = true;
@@ -348,9 +362,10 @@ namespace Lab_03
             // 
             // buttonClear
             // 
-            this.buttonClear.Location = new System.Drawing.Point(610, 384);
+            this.buttonClear.Location = new System.Drawing.Point(736, 511);
+            this.buttonClear.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonClear.Name = "buttonClear";
-            this.buttonClear.Size = new System.Drawing.Size(75, 38);
+            this.buttonClear.Size = new System.Drawing.Size(86, 51);
             this.buttonClear.TabIndex = 30;
             this.buttonClear.Text = "Очистка\r\nполотна";
             this.buttonClear.UseVisualStyleBackColor = true;
@@ -358,9 +373,10 @@ namespace Lab_03
             // 
             // buttonAsk
             // 
-            this.buttonAsk.Location = new System.Drawing.Point(610, 488);
+            this.buttonAsk.Location = new System.Drawing.Point(857, 13);
+            this.buttonAsk.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonAsk.Name = "buttonAsk";
-            this.buttonAsk.Size = new System.Drawing.Size(75, 23);
+            this.buttonAsk.Size = new System.Drawing.Size(86, 31);
             this.buttonAsk.TabIndex = 31;
             this.buttonAsk.Text = "Справка";
             this.buttonAsk.UseVisualStyleBackColor = true;
@@ -368,9 +384,10 @@ namespace Lab_03
             // 
             // buttonCmpAlgs
             // 
-            this.buttonCmpAlgs.Location = new System.Drawing.Point(520, 428);
+            this.buttonCmpAlgs.Location = new System.Drawing.Point(633, 570);
+            this.buttonCmpAlgs.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonCmpAlgs.Name = "buttonCmpAlgs";
-            this.buttonCmpAlgs.Size = new System.Drawing.Size(114, 55);
+            this.buttonCmpAlgs.Size = new System.Drawing.Size(130, 73);
             this.buttonCmpAlgs.TabIndex = 32;
             this.buttonCmpAlgs.Text = "Сравнить\r\nалгоритмы по\r\nбыстродействию";
             this.buttonCmpAlgs.UseVisualStyleBackColor = true;
@@ -378,9 +395,10 @@ namespace Lab_03
             // 
             // buttonCompute
             // 
-            this.buttonCompute.Location = new System.Drawing.Point(655, 428);
+            this.buttonCompute.Location = new System.Drawing.Point(809, 570);
+            this.buttonCompute.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonCompute.Name = "buttonCompute";
-            this.buttonCompute.Size = new System.Drawing.Size(114, 55);
+            this.buttonCompute.Size = new System.Drawing.Size(130, 73);
             this.buttonCompute.TabIndex = 33;
             this.buttonCompute.Text = "Исследовать\r\nалгоритм на\r\nступенчатость";
             this.buttonCompute.UseVisualStyleBackColor = true;
@@ -388,9 +406,9 @@ namespace Lab_03
             // 
             // MainWindow
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(777, 527);
+            this.ClientSize = new System.Drawing.Size(955, 653);
             this.Controls.Add(this.buttonCompute);
             this.Controls.Add(this.buttonCmpAlgs);
             this.Controls.Add(this.buttonAsk);
@@ -426,6 +444,7 @@ namespace Lab_03
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
             this.Name = "MainWindow";
             this.Text = "Построение отрезков";
