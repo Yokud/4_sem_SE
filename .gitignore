@@ -86,3 +86,7 @@ Properties/
 # Python
 .idea/
 __pycache__/
+
+# ASM
+DOSBox*/
+examples/
