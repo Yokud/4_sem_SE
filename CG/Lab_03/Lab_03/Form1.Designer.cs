@@ -143,16 +143,16 @@ namespace Lab_03
             "Брезенхем(целые)",
             "Брезенхем(без ступенч.)",
             "Ву"});
-            this.choiceAlg.Location = new System.Drawing.Point(776, 90);
+            this.choiceAlg.Location = new System.Drawing.Point(768, 90);
             this.choiceAlg.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.choiceAlg.Name = "choiceAlg";
-            this.choiceAlg.Size = new System.Drawing.Size(163, 28);
+            this.choiceAlg.Size = new System.Drawing.Size(181, 28);
             this.choiceAlg.TabIndex = 6;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(633, 143);
+            this.label4.Location = new System.Drawing.Point(633, 162);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(145, 20);
             this.label4.TabIndex = 7;
@@ -161,7 +161,7 @@ namespace Lab_03
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(655, 168);
+            this.label5.Location = new System.Drawing.Point(655, 187);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(56, 20);
             this.label5.TabIndex = 8;
@@ -170,7 +170,7 @@ namespace Lab_03
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(667, 207);
+            this.label6.Location = new System.Drawing.Point(667, 226);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(44, 20);
             this.label6.TabIndex = 9;
@@ -179,7 +179,7 @@ namespace Lab_03
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(798, 167);
+            this.label7.Location = new System.Drawing.Point(798, 186);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(55, 20);
             this.label7.TabIndex = 10;
@@ -188,7 +188,7 @@ namespace Lab_03
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(827, 189);
+            this.label8.Location = new System.Drawing.Point(827, 208);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(19, 20);
             this.label8.TabIndex = 11;
@@ -197,7 +197,7 @@ namespace Lab_03
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(826, 227);
+            this.label9.Location = new System.Drawing.Point(826, 246);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(19, 20);
             this.label9.TabIndex = 12;
@@ -206,7 +206,7 @@ namespace Lab_03
             // S_length
             // 
             this.S_length.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.S_length.Location = new System.Drawing.Point(709, 167);
+            this.S_length.Location = new System.Drawing.Point(709, 186);
             this.S_length.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.S_length.Name = "S_length";
             this.S_length.Size = new System.Drawing.Size(62, 25);
@@ -215,7 +215,7 @@ namespace Lab_03
             // S_angle
             // 
             this.S_angle.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.S_angle.Location = new System.Drawing.Point(709, 206);
+            this.S_angle.Location = new System.Drawing.Point(709, 225);
             this.S_angle.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.S_angle.Name = "S_angle";
             this.S_angle.Size = new System.Drawing.Size(62, 25);
@@ -224,7 +224,7 @@ namespace Lab_03
             // S_centre_x
             // 
             this.S_centre_x.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.S_centre_x.Location = new System.Drawing.Point(848, 187);
+            this.S_centre_x.Location = new System.Drawing.Point(848, 206);
             this.S_centre_x.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.S_centre_x.Name = "S_centre_x";
             this.S_centre_x.Size = new System.Drawing.Size(62, 25);
@@ -233,7 +233,7 @@ namespace Lab_03
             // S_centre_y
             // 
             this.S_centre_y.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.S_centre_y.Location = new System.Drawing.Point(848, 224);
+            this.S_centre_y.Location = new System.Drawing.Point(848, 243);
             this.S_centre_y.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.S_centre_y.Name = "S_centre_y";
             this.S_centre_y.Size = new System.Drawing.Size(62, 25);
@@ -241,7 +241,7 @@ namespace Lab_03
             // 
             // buttonSpectre
             // 
-            this.buttonSpectre.Location = new System.Drawing.Point(697, 260);
+            this.buttonSpectre.Location = new System.Drawing.Point(697, 279);
             this.buttonSpectre.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonSpectre.Name = "buttonSpectre";
             this.buttonSpectre.Size = new System.Drawing.Size(156, 31);

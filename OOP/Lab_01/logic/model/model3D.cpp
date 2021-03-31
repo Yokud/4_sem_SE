@@ -16,11 +16,16 @@ void delete_model3D(model3D_t &model)
     delete_points3D(model.points);
 }
 
+bool is_loaded(const model3D_t &model)
+{
+    return model.loaded;
+}
+
 error_t scale_model(model3D_t &model, const scale_params_t &params)
 {
     error_t err = OK;
 
-    if (!model.loaded)
+    if (!is_loaded(model))
         err = MODEL_VOID_ERROR;
 
     if (err == OK)
@@ -37,7 +42,7 @@ error_t rotate_model(model3D_t &model, const rotate_params_t &params)
 {
     error_t err = OK;
 
-    if (!model.loaded)
+    if (!is_loaded(model))
         err = MODEL_VOID_ERROR;
 
     if (err == OK && is_incorrect_axis(params.axis))
@@ -50,7 +55,7 @@ error_t rotate_model(model3D_t &model, const rotate_params_t &params)
 
 error_t write_model(model3D_t &model, const load_params_t &params)
 {
-    if (!model.loaded)
+    if (!is_loaded(model))
         return MODEL_VOID_ERROR;
 
     error_t err = OK;
@@ -69,7 +74,7 @@ error_t write_model(model3D_t &model, const load_params_t &params)
     return err;
 }
 
-bool is_correct_model(model3D_t &model)
+static bool is_correct_model(model3D_t &model)
 {
     error_t err;
     err = are_correct_edges(model.edges, model.points);
@@ -83,36 +88,32 @@ bool is_correct_model(model3D_t &model)
 // исправить проверку загруженности модели - Fixed!
 error_t read_model(model3D_t &model, const load_params_t &params)
 {
-    error_t err = OK;
 
-    if (model.loaded)
-        err = MODEL_ALREADY_LOADED_ERROR;
+//    if (is_loaded(model))
+//        return MODEL_ALREADY_LOADED_ERROR;
 
     FILE *f = NULL;
 
-    if (err == OK && (f = fopen(params.filename, "r")) == NULL)
-        err = FILE_ERROR;
+    if ((f = fopen(params.filename, "r")) == NULL)
+        return FILE_ERROR;
 
-    model3D_t model_tmp;
-    if (err == OK)
-    {
-        model_tmp = init_model3D();
-        err = read_points3D(model_tmp.points, f);
-    }
-
+    error_t err = OK;
+    model3D_t model_tmp = init_model3D();
+    err = read_points3D(model_tmp.points, f);
     if (err == OK)
     {
         err = read_edges(model_tmp.edges, f);
         if (err != OK)
             delete_points3D(model_tmp.points);
     }
+    fclose(f);
 
-    if (err != FILE_ERROR)
-        fclose(f);
-
-    bool is_correct = is_correct_model(model_tmp);
-    if (err == OK && is_correct)
+    bool is_correct;
+    if (err == OK && (is_correct = is_correct_model(model_tmp)))
+    {
+        delete_model3D(model);
         model = model_tmp;
+    }
     else if (!is_correct)
         err = INCORRECT_MODEL;
 
