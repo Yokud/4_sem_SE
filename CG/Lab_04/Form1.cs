@@ -156,48 +156,31 @@ namespace Lab_04
 
             int x = 0, y = radius, D = 2 * (1 - radius);
 
-            OctantMirrored(points, x + centre_x, y + centre_y, centre_x, centre_y);
-
-            while (x < y)
+            while (x <= y)
             {
+                OctantMirrored(points, x + centre_x, y + centre_y, centre_x, centre_y);
+
                 if (D < 0)
                 {
                     int D1 = 2 * D + 2 * y - 1;
-                    if (D1 < 0)
+                    if (D1 <= 0)
                     {
                         x += 1;
                         D += 2 * x + 1;
                     }
-                    else if (D1 > 0)
+                    else
                     {
                         x += 1;
                         y -= 1;
                         D += 2 * (x - y + 1);
                     }
                 }
-                else if (D == 0)
+                else
                 {
                     x += 1;
                     y -= 1;
                     D += 2 * (x - y + 1);
                 }
-                else
-                {
-                    int D2 = 2 * D - 2 * x - 1;
-                    if (D2 < 0)
-                    {
-                        x += 1;
-                        y -= 1;
-                        D += 2 * (x - y + 1);
-                    }
-                    else if (D2 > 0)
-                    {
-                        y -= 1;
-                        D = D - 2 * y + 1;
-                    }
-                }
-
-                OctantMirrored(points, x + centre_x, y + centre_y, centre_x, centre_y);
             }
 
             return timer.ElapsedTicks;
@@ -207,20 +190,23 @@ namespace Lab_04
         {
             var timer = Stopwatch.StartNew();
 
-            int x = 0, y = radius, delta = 5 - 4 * radius;
+            int x = 0, y = radius, delta = RoundToInt(1.25 - radius);
 
             while (x <= y)
             {
                 OctantMirrored(points, x + centre_x, y + centre_y, centre_x, centre_y);
 
-                x += 1;
-                if (delta >= 0)
+                if (delta > 0)
                 {
+                    x += 1;
                     y -= 1;
-                    delta += 8 * (x - y + 1) + 4;
+                    delta += 2 * (x - y);
                 }
                 else
-                    delta += 8 * x + 4;
+                {
+                    x += 1;
+                    delta += 2 * x + 1;
+                }
             }
 
             return timer.ElapsedTicks;
@@ -270,44 +256,38 @@ namespace Lab_04
         {
             var timer = Stopwatch.StartNew();
 
-            int x = 0, y = b, delta = b * b - a * a * (2 * b - 1);
+            int x = 0, y = b;
+            int b2 = b * b, a2 = a * a;
+            int delta = RoundToInt(b2 - a2 * b + 0.25 * a2);
 
-            while (y >= 0)
+            while (b2 * x < a2 * y)
             {
                 QuarterMirrored(points, x + centre_x, y + centre_y, centre_x, centre_y);
 
-                if (delta < 0)
+                if (delta >= 0)
                 {
-                    int delta_temp = 2 * delta + a * a * (2 * y - 1);
-                    x += 1;
-                    
-                    if (delta_temp <= 0)
-                        delta += b * b * (2 * x + 1);
-                    else
-                    {
-                        y -= 1;
-                        delta += (2 * x + 1) * b * b + (1 - 2 * y) * a * a;
-                    }
-                }
-                else if (delta > 0)
-                {
-                    int delta_temp = 2 * delta + b * b * (2 * x - 1);
                     y -= 1;
-                    
-                    if (delta_temp <= 0)
-                    {
-                        x += 1;
-                        delta += b * b * (2 * x + 1) + (1 - 2 * y) * a * a;
-                    }
-                    else
-                        delta += a * a * (-2 * y + 1);
+                    delta -= 4 * a2 * y;
                 }
-                else
+
+                delta += 2 * b2 * (3 + 2 * x);
+                x += 1;
+            }
+
+            delta = RoundToInt(b2 * (x + 0.5) * (x + 0.5) + a2 * (y - 0.5) * (y - 0.5) - a2 * b2);
+
+            while (y + 1 > 0)
+            {
+                QuarterMirrored(points, x + centre_x, y + centre_y, centre_x, centre_y);
+
+                if (delta <= 0)
                 {
                     x += 1;
-                    y -= 1;
-                    delta += (2 * x + 1) * b * b + (1 - 2 * y) * a * a;
-                } 
+                    delta += 4 * b2 * x;
+                }
+
+                y -= 1;
+                delta += 2 * a2 * (3 - 2 * y);
             }
 
             return timer.ElapsedTicks;
@@ -319,43 +299,45 @@ namespace Lab_04
 
             int x = 0, y = b;
 
-            double delta = b * b - a * a * b + a * a / 4.0;
-            double dx = 2 * b * b * x, dy = 2 * a * a * y;
+            int b2 = b * b, a2 = a * a;
 
-            while (dx < dy)
+            double delta = b2 - a2 * b + 0.25 * a2;
+
+            while (b2 * x < a2 * y)
             {
                 QuarterMirrored(points, x + centre_x, y + centre_y, centre_x, centre_y);
 
-                x += 1;
-                dx += 2 * b * b;
-
-                if (delta >= 0)
+                if (delta > 0)
                 {
+                    x += 1;
                     y -= 1;
-                    dy -= 2 * a * a;
-                    delta -= dy;
+                    
+                    delta += 2 * b2 * x - 2 * a2 * y;
                 }
-
-                delta += dx + b * b;
+                else
+                {
+                    x += 1;
+                    delta += b2 * (2 * x + 1);
+                }
             }
 
-            delta = 0.75 * (a * a - b * b) - (dx + dy) / 2.0;
+            delta += 0.75 * (a2 + b2) - (a2 * y + b2 * x);
 
             while (y >= 0)
             {
                 QuarterMirrored(points, x + centre_x, y + centre_y, centre_x, centre_y);
 
-                y -= 1;
-                dy -= 2 * a * a;
-
-                if (delta <= 0)
+                if (delta > 0)
                 {
+                    y -= 1;
                     x += 1;
-                    dx += 2 * b * b;
-                    delta += dx;
+                    delta += a2 * (2 * y + 1) - 2 * b2 * x;
                 }
-
-                delta -= dy - a * a;
+                else
+                {
+                    y -= 1;
+                    delta += a2 * (2 * y + 1);
+                }
             }
 
             return timer.ElapsedTicks;

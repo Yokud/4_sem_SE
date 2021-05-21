@@ -33,7 +33,6 @@
 *.lnk
 
 # Qt
-*.pro
 *.pro.user*
 build*/
 
@@ -42,7 +41,6 @@ build*/
 *.user
 *.sln.docstates
 *.sln
-*.csproj
 *.config
 
 [Dd]ebug/
