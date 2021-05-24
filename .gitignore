@@ -40,8 +40,8 @@ build*/
 *.suo
 *.user
 *.sln.docstates
-*.sln
 *.config
+.vs/
 
 [Dd]ebug/
 [Rr]elease/
