@@ -40,7 +40,6 @@ build*/
 *.suo
 *.user
 *.sln.docstates
-*.config
 .vs/
 
 [Dd]ebug/

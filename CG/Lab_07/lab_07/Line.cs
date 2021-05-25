@@ -3,8 +3,6 @@
 
 namespace lab_07
 {
-    public partial class Form1
-    {
         class Line
         {
             public PointF a, b;
@@ -20,6 +18,15 @@ namespace lab_07
                 a = PointF.Empty;
                 b = PointF.Empty;
             }
+
+            public double Len()
+            {
+                return System.Math.Sqrt((a.X - b.X) * (a.X - b.X) + (a.Y - b.Y) * (a.Y - b.Y));
+            }
+
+            public static double Len(PointF a1, PointF a2)
+            {
+                return System.Math.Sqrt((a1.X - a2.X) * (a1.X - a2.X) + (a1.Y - a2.Y) * (a1.Y - a2.Y));
+            }
         }
-    }
 }

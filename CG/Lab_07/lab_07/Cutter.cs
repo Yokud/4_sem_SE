@@ -27,10 +27,10 @@ namespace lab_07
         }
 
 
-        public int IsVisible(PointF a, PointF b)
+        public int IsVisible(Line line)
         {
-            int SumA = GetCode(a);
-            int SumB = GetCode(b);
+            int SumA = GetCode(line.a);
+            int SumB = GetCode(line.b);
 
             int visibility = -1; // не определено
 
