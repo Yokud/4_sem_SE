@@ -86,10 +86,7 @@ namespace lab_07
                 PointF R = line.a;
 
                 if (cutter.GetCode(line.b) == 0)
-                {
                     Swap(ref line.a, ref line.b);
-                    continue;
-                }
                 else
                 {
                     while (line.Len() >= eps)
@@ -214,7 +211,11 @@ namespace lab_07
 
         private void buttonInfo_Click(object sender, EventArgs e)
         {
+            string info = "Данная программа позволяет отсекать отрезки регулярным отсекателем с помощью алгоритма " +
+                "разбиения средней точкой.\n\tГраницы отсекателя задаются целыми числами. Используется экранная система координат. " +
+                "Сам экран имеет размер 1300 на 700 пикселей.";
 
+            MessageBox.Show(info, "Информация о программе", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

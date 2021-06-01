@@ -95,7 +95,10 @@ namespace Lab_06
         long Filling(Bitmap map, Lines borders, Point fill_pixel, Color filling_color, Color border_color, bool is_sleep)
         {
             if (borders == null || borders.IsVoid() || fill_pixel == Point.Empty)
+            {
+                MessageBox.Show("Не введена граница затравки", "Ошибка затравки");
                 return 0;
+            }
 
             if (is_sleep)
                 Thread.Sleep(1500);
