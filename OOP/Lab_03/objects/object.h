@@ -8,8 +8,12 @@
 
 #include <string>
 
+#define MODEL 1
+#define CAMERA 2
+#define COMPOSITE 3
+
     class Object;
-    using ObjIterator = std::vector<std::shared_ptr<Object>>::const_iterator;
+    using ObjIterator = std::vector<std::shared_ptr<Object>>::iterator;
 
     class Object
     {
@@ -27,7 +31,7 @@
         virtual void accept(std::shared_ptr<Visitor> visitor) = 0;
         virtual void reform(const Point &move, const Point &scale, const Point &turn) = 0;
 
-        virtual std::string info() = 0;
+        virtual size_t info() = 0;
     };
 
 

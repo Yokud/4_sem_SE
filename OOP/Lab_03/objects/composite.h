@@ -26,7 +26,7 @@
 
         std::vector<std::shared_ptr<Object>> getObjects() { return objects; };
 
-        virtual std::string info() override { return "It's composite";};
+        virtual size_t info() override { return COMPOSITE;};
 
     private:
         std::vector<std::shared_ptr<Object>> objects;

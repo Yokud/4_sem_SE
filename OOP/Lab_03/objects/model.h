@@ -27,7 +27,7 @@
         virtual void reform(const Point &move, const Point &scale, const Point &turn) override;
         virtual void accept(std::shared_ptr<Visitor> visitor) override;
 
-        virtual std::string info() override { return "It's model";};
+        virtual size_t info() override { return MODEL;};
 
     private:
         std::shared_ptr<ModelDetails> details;
