@@ -108,12 +108,11 @@ namespace lab_08
         private void FindNormalVectors(int direction)
         {
             Vector b;
-            float tmp;
             normal.Clear();
 
             for (int i = 0; i < vertex.Count; i++)
             {
-                b = new Vector(GetVertex(i - 1), GetVertex(i));
+                b = new Vector(GetVertex(i), GetVertex(i + 1));
                 Vector n;
 
                 if (IsZero(b.x))
@@ -121,16 +120,11 @@ namespace lab_08
                 else
                     n = new Vector(-b.y / b.x, 1);
 
-                if (Vector.ScalarMultiplication(n, new Vector(GetVertex(i - 1), GetVertex(i + 1))) <= 0)
+                if (Vector.ScalarMultiplication(n, new Vector(GetVertex(i), GetVertex(i + 2))) < 0)
                 {
                     n.x *= -1;
                     n.y *= -1;
                 }
-
-                //if (direction == -1)
-                //    n.y *= -1;
-                //else
-                //    n.x *= -1;
 
 
                 normal.Add(n);
@@ -144,7 +138,7 @@ namespace lab_08
             float t_down = 0, t_up = 1;
             float t_tmp;
 
-            Vector D = new Vector(l.end, l.start);
+            Vector D = new Vector(l.start, l.end);
             Vector w;
 
             float D_sc;
@@ -152,7 +146,7 @@ namespace lab_08
 
             for (int i = 0; i < vertex.Count; i++)
             {
-                w = new Vector(l.start, vertex[i]);
+                w = new Vector(vertex[i], l.start);
                 D_sc = Vector.ScalarMultiplication(D, normal[i]);
                 W_sc = Vector.ScalarMultiplication(w, normal[i]);
 
@@ -160,11 +154,12 @@ namespace lab_08
                 {
                     if (W_sc < 0)
                         return new Segment();
-                    // точка видима относительно текущей границы
+                    else if (W_sc > 0)
+                        continue; // точка видима относительно текущей границы
                 }
                 else
                 {
-                    t_tmp = -1 * (W_sc / D_sc);
+                    t_tmp = -W_sc / D_sc;
                     if (D_sc > 0) // поиск нижнего предела
                     {
                         if (t_tmp > 1)
