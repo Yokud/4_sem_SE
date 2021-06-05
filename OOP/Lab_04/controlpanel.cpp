@@ -1,15 +1,17 @@
-#include "controller.h"
+#include "controlpanel.h"
 
-void Controller::new_target(int floor)
+void ControlPanel::new_target(int floor)
 {
     qDebug() << "Get new target: floor №" << floor + 1;
     is_target[floor] = true;
 
+    cur_dir = (cur_floor > floor) ? DOWN : UP;
+
     if (state == FREE)
-        next_target();
+        nextTarget();
 }
 
-void Controller::next_target()
+void ControlPanel::nextTarget()
 {
     if (is_target[cur_floor])
     {
@@ -18,7 +20,21 @@ void Controller::next_target()
     }
     else
     {
-        for (int i = 0; i < is_target.size(); i++)
+        if (cur_dir == DOWN)
+            for (int i = FLOORS_COUNT - 1; i > -1; i--)
+            {
+                if (is_target[i])
+                {
+                    is_target[i] = false;
+                    if (i < cur_floor)
+                        emit panel_new_target(i, DOWN);
+                    else
+                        emit panel_new_target(i, UP);
+                    return;
+                }
+            }
+
+        for (int i = 0; i < FLOORS_COUNT; i++)
             if (is_target[i])
             {
                 is_target[i] = false;
@@ -31,7 +47,7 @@ void Controller::next_target()
     }
 }
 
-void Controller::busy(int floor, const direction &_direction)
+void ControlPanel::busy(int floor, const direction &_direction)
 {
     if (state == FREE)
     {
@@ -46,9 +62,9 @@ void Controller::busy(int floor, const direction &_direction)
     }
 }
 
-void Controller::free(int floor)
+void ControlPanel::free(int floor)
 {
     state = FREE;
     cur_floor = floor;
-    next_target();
+    nextTarget();
 }

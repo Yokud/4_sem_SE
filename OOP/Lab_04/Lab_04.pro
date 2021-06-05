@@ -10,7 +10,7 @@ CONFIG += c++11
 
 SOURCES += \
     cabin.cpp \
-    controller.cpp \
+    controlpanel.cpp \
     door.cpp \
     lift.cpp \
     main.cpp \
@@ -19,7 +19,7 @@ SOURCES += \
 HEADERS += \
     cabin.h \
     consts.h \
-    controller.h \
+    controlpanel.h \
     door.h \
     lift.h \
     mainwindow.h

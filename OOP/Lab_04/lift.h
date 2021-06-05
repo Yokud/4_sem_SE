@@ -2,7 +2,7 @@
 #define LIFT_H
 
 #include <QObject>
-#include "controller.h"
+#include "controlpanel.h"
 #include "cabin.h"
 
 class Lift : public QObject
@@ -14,7 +14,7 @@ public:
 
 private:
     Cabin cabin;
-    Controller controller;
+    ControlPanel controller;
 };
 
 #endif // LIFT_H
