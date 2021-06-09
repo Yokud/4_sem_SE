@@ -150,7 +150,7 @@ namespace lab_08
                 D_sc = Vector.ScalarMultiplication(D, normal[i]);
                 W_sc = Vector.ScalarMultiplication(w, normal[i]);
 
-                if (IsZero(D_sc)) // отрезок выродился в точку / D и сторона парралельны
+                if (IsZero(D_sc)) // отрезок выродился в точку или сторона парралельна
                 {
                     if (W_sc < 0)
                         return new Segment();
